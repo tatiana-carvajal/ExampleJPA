@@ -22,7 +22,7 @@ import javax.persistence.TemporalType;
 
 /**
  *
- * @author USUARIO
+ * @author Aprendiz
  */
 @Entity
 @Table(name = "record")
@@ -154,7 +154,7 @@ public class Record implements Serializable {
 
     @Override
     public String toString() {
-        return "com.mycompany.examplejpa.model.Record[ id=" + id + " ]";
+        return "co.edu.sena.examplejpa.model.Record[ id=" + id + " ]";
     }
     
 }

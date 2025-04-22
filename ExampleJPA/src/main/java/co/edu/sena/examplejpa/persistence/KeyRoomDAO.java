@@ -10,7 +10,7 @@ import javax.persistence.Query;
 
 /**
  *
- * @author USUARIO
+ * @author Aprendiz
  */
 public class KeyRoomDAO implements IKeyRoomDAO{
 
@@ -18,46 +18,51 @@ public class KeyRoomDAO implements IKeyRoomDAO{
     public void insert(KeyRoom keyRoom) throws Exception {
         try {
             EntityManagerHelper.getEntityManager().persist(keyRoom);
-        } catch (RuntimeException e) {
+        }
+        catch (RuntimeException e) {
             throw e;
         }
     }
 
     @Override
     public void update(KeyRoom keyRoom) throws Exception {
-         try {
+        try {
             EntityManagerHelper.getEntityManager().merge(keyRoom);
-        } catch (RuntimeException e) {
+        }
+        catch (RuntimeException e) {
             throw e;
         }
     }
 
     @Override
     public void delete(KeyRoom keyRoom) throws Exception {
-         try {
+        try {
             EntityManagerHelper.getEntityManager().remove(keyRoom);
-        } catch (RuntimeException e) {
+        }
+        catch (RuntimeException e) {
             throw e;
-        } 
+        }
     }
 
     @Override
     public KeyRoom findById(Integer id) throws Exception {
-         try {
-             return EntityManagerHelper.getEntityManager().find(KeyRoom.class, id);
-        } catch (RuntimeException e) {
+        try {
+            return EntityManagerHelper.getEntityManager().find(KeyRoom.class, id);
+        }
+        catch (RuntimeException e) {
             throw e;
         }
     }
 
     @Override
-    public List<KeyRoom> findAll() throws Exception {
+    public List<KeyRoom> findByAll() throws Exception {
         try {
-             Query query = EntityManagerHelper.getEntityManager().createNamedQuery("KeyRoom.findAll");
-             return query.getResultList();
-        } catch (RuntimeException e) {
+            Query query = EntityManagerHelper.getEntityManager().createNamedQuery("KeyRoom.findAll");
+            
+            return query.getResultList();
+        }
+        catch (RuntimeException e) {
             throw e;
         }
-        
     }
 }

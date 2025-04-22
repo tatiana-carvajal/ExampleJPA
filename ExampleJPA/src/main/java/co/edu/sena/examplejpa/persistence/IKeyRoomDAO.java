@@ -9,13 +9,12 @@ import java.util.List;
 
 /**
  *
- * @author USUARIO
+ * @author Aprendiz
  */
 public interface IKeyRoomDAO {
     public void insert(KeyRoom keyRoom) throws Exception;
     public void update(KeyRoom keyRoom) throws Exception;
     public void delete(KeyRoom keyRoom) throws Exception;
     public KeyRoom findById(Integer id) throws Exception;
-    public List<KeyRoom> findAll() throws Exception;
-    
+    public List<KeyRoom> findByAll() throws Exception;
 }

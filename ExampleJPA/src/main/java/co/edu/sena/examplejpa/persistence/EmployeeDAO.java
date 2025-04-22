@@ -6,69 +6,64 @@ package co.edu.sena.examplejpa.persistence;
 
 import co.edu.sena.examplejpa.model.Employee;
 import java.util.List;
-import javax.persistence.NoResultException;
 import javax.persistence.Query;
 
 /**
  *
- * @author USUARIO
+ * @author Aprendiz
  */
 public class EmployeeDAO implements IEmployeeDAO{
 
     @Override
     public void insert(Employee employee) throws Exception {
-          try {
-              EntityManagerHelper.beginTransaction();
+        try {
             EntityManagerHelper.getEntityManager().persist(employee);
-            EntityManagerHelper.commit();
-        } catch (RuntimeException e) {
-             EntityManagerHelper.rollback();
+        }
+        catch (RuntimeException e) {
             throw e;
-        }finally{
-               EntityManagerHelper.closeEntityManager();
-          }
+        }
     }
 
     @Override
     public void update(Employee employee) throws Exception {
         try {
             EntityManagerHelper.getEntityManager().merge(employee);
-        } catch (RuntimeException e) {
+        }
+        catch (RuntimeException e) {
             throw e;
         }
     }
 
     @Override
     public void delete(Employee employee) throws Exception {
-         try {
-            EntityManagerHelper.getEntityManager().remove(employee);
-        } catch (RuntimeException e) {
-            throw e;
-        } 
-    }
-
-     @Override
-    public Employee findById(Long document) throws Exception {
         try {
-           Query query = EntityManagerHelper.getEntityManager().createNamedQuery("Employee.findById");
-        query.setParameter("document", document.longValue()); 
-        return (Employee) query.getSingleResult();
-        } catch (NoResultException e) {
-            return null;
-        } catch (RuntimeException e) {
+            EntityManagerHelper.getEntityManager().remove(employee);
+        }
+        catch (RuntimeException e) {
             throw e;
         }
     }
-    
 
     @Override
-    public List<Employee> findAll() throws Exception {
-         try {
-             Query query = EntityManagerHelper.getEntityManager().createNamedQuery("Employee.findAll");
-             return query.getResultList();
-        } catch (RuntimeException e) {
+    public Employee findById(Long document) throws Exception {
+        try {
+            return EntityManagerHelper.getEntityManager().find(Employee.class, document);
+        }
+        catch (RuntimeException e) {
             throw e;
         }
+    }
+
+    @Override
+    public List<Employee> findByAll() throws Exception {
+        try {
+                    Query query = EntityManagerHelper.getEntityManager().createNamedQuery("Employee.findAll");
+
+                    return query.getResultList();
+                }
+                catch (RuntimeException e) {
+                    throw e;
+                }   
     }
     
 }

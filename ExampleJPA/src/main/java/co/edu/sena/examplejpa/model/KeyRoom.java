@@ -20,10 +20,10 @@ import javax.persistence.Table;
 
 /**
  *
- * @author USUARIO
+ * @author Aprendiz
  */
 @Entity
-@Table(name = "key\u001f_room")
+@Table(name = "key_room")
 @NamedQueries({
     @NamedQuery(name = "KeyRoom.findAll", query = "SELECT k FROM KeyRoom k"),
     @NamedQuery(name = "KeyRoom.findById", query = "SELECT k FROM KeyRoom k WHERE k.id = :id"),
@@ -137,7 +137,7 @@ public class KeyRoom implements Serializable {
 
     @Override
     public String toString() {
-        return "com.mycompany.examplejpa.model.KeyRoom[ id=" + id + " ]";
+        return "co.edu.sena.examplejpa.model.KeyRoom[ id=" + id + " ]";
     }
     
 }

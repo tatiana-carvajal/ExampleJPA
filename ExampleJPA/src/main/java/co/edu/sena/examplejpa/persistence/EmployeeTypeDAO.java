@@ -9,9 +9,9 @@ import java.util.List;
 import javax.persistence.Query;
 
 /**
- *fecha:8/04/2025
+ * Fecha: 08/04/2025
  * @author tatiana
- * obejtivo: implementar DAO para modelo tipo de empleado
+ * Objetivo: Implementar DAO para modelo Tipo de Empleado.
  */
 public class EmployeeTypeDAO implements IEmployeeTypeDAO{
 
@@ -19,16 +19,18 @@ public class EmployeeTypeDAO implements IEmployeeTypeDAO{
     public void insert(EmployeeType employeeType) throws Exception {
         try {
             EntityManagerHelper.getEntityManager().persist(employeeType);
-        } catch (RuntimeException e) {
+        }
+        catch (RuntimeException e) {
             throw e;
         }
     }
 
     @Override
     public void update(EmployeeType employeeType) throws Exception {
-         try {
+        try {
             EntityManagerHelper.getEntityManager().merge(employeeType);
-        } catch (RuntimeException e) {
+        }
+        catch (RuntimeException e) {
             throw e;
         }
     }
@@ -37,26 +39,30 @@ public class EmployeeTypeDAO implements IEmployeeTypeDAO{
     public void delete(EmployeeType employeeType) throws Exception {
         try {
             EntityManagerHelper.getEntityManager().remove(employeeType);
-        } catch (RuntimeException e) {
-            throw e;
-        }    
-    }
-
-    @Override
-    public EmployeeType findById(Integer id) throws Exception {
-        try {
-             return EntityManagerHelper.getEntityManager().find(EmployeeType.class, id);
-        } catch (RuntimeException e) {
+        }
+        catch (RuntimeException e) {
             throw e;
         }
     }
 
     @Override
-    public List<EmployeeType> findAll() throws Exception {
-         try {
-             Query query = EntityManagerHelper.getEntityManager().createNamedQuery("Record.findAll");
-             return query.getResultList();
-        } catch (RuntimeException e) {
+    public EmployeeType findById(Integer id) throws Exception {
+        try {
+            return EntityManagerHelper.getEntityManager().find(EmployeeType.class, id);
+        }
+        catch (RuntimeException e) {
+            throw e;
+        }
+    }
+
+    @Override
+    public List<EmployeeType> findByAll() throws Exception {
+        try {
+            Query query = EntityManagerHelper.getEntityManager().createNamedQuery("EmployeeType.findAll");
+            
+            return query.getResultList();
+        }
+        catch (RuntimeException e) {
             throw e;
         }
     }

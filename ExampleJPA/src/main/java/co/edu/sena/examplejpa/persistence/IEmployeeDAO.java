@@ -9,12 +9,12 @@ import java.util.List;
 
 /**
  *
- * @author USUARIO
+ * @author Aprendiz
  */
 public interface IEmployeeDAO {
-       public void insert(Employee employee) throws Exception;
+    public void insert(Employee employee) throws Exception;
     public void update(Employee employee) throws Exception;
     public void delete(Employee employee) throws Exception;
     public Employee findById(Long document) throws Exception;
-    public List<Employee> findAll() throws Exception;
+    public List<Employee> findByAll() throws Exception;
 }

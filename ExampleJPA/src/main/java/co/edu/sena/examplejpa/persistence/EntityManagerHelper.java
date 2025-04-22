@@ -1,3 +1,4 @@
+
 package co.edu.sena.examplejpa.persistence;
 
 import java.util.logging.Level;
@@ -19,9 +20,9 @@ public class EntityManagerHelper {
     private static final Logger logger;
 
     static {
-        emf = Persistence.createEntityManagerFactory("com.mycompany_ExampleJPA_jar_1.0-SNAPSHOTPU");
+        emf = Persistence.createEntityManagerFactory("co.edu.sena_ExampleJPA_jar_1.0-SNAPSHOTPU");
         threadLocal = new ThreadLocal<EntityManager>();
-        logger = Logger.getLogger("com.mycompany_ExampleJPA_jar_1.0-SNAPSHOTPU");
+        logger = Logger.getLogger("co.edu.sena_ExampleJPA_jar_1.0-SNAPSHOTPU");
         logger.setLevel(Level.ALL);
     }
 

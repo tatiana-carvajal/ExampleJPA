@@ -19,7 +19,7 @@ import javax.persistence.Table;
 
 /**
  *
- * @author USUARIO
+ * @author Aprendiz
  */
 @Entity
 @Table(name = "employee_type")
@@ -99,7 +99,7 @@ public class EmployeeType implements Serializable {
 
     @Override
     public String toString() {
-        return "com.mycompany.examplejpa.model.EmployeeType[ id=" + id + " ]";
+        return "co.edu.sena.examplejpa.model.EmployeeType[ id=" + id + " ]";
     }
     
 }

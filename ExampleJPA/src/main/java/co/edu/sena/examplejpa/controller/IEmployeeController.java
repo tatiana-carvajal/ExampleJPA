@@ -2,19 +2,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
-package co.edu.sena.examplejpa.persistence.controller;
+package co.edu.sena.examplejpa.controller;
 
 import co.edu.sena.examplejpa.model.Employee;
 import java.util.List;
 
 /**
- *
- * @author Tatiana
+ *Fecha: 25/03/2025
+ * @author tatiana
+ * Objetivo: Interface para el modelo Employee.
  */
 public interface IEmployeeController {
     public void insert(Employee employee) throws Exception;
-    public void update (Employee employee) throws Exception;
+    public void update(Employee employee) throws Exception;
     public void delete(Long document) throws Exception;
-    public List<Employee> findAll() throws Exception;
-    public Employee findById(long document) throws Exception;
+    public List<Employee>  findAll() throws Exception;
+    public  Employee findById(Long document) throws Exception;
 }

@@ -1,4 +1,4 @@
-    /*
+/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
@@ -20,17 +20,16 @@ import javax.persistence.Table;
 
 /**
  *
- * @author USUARIO
+ * @author Aprendiz
  */
 @Entity
 @Table(name = "employee")
 @NamedQueries({
     @NamedQuery(name = "Employee.findAll", query = "SELECT e FROM Employee e"),
-    @NamedQuery(name = "Employee.findById", query = "SELECT e FROM Employee e WHERE e.document = :document"),
     @NamedQuery(name = "Employee.findByDocument", query = "SELECT e FROM Employee e WHERE e.document = :document"),
     @NamedQuery(name = "Employee.findByFullname", query = "SELECT e FROM Employee e WHERE e.fullname = :fullname"),
-    @NamedQuery(name = "Employee.findByAddress", query = "SELECT e FROM Employee e WHERE e.address = :address"),
-    @NamedQuery(name = "Employee.findByPhone", query = "SELECT e FROM Employee e WHERE e.phone = :phone")})
+    @NamedQuery(name = "Employee.findByDireccion", query = "SELECT e FROM Employee e WHERE e.direccion = :direccion"),
+    @NamedQuery(name = "Employee.findByTelefono", query = "SELECT e FROM Employee e WHERE e.telefono = :telefono")})
 public class Employee implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -42,11 +41,11 @@ public class Employee implements Serializable {
     @Column(name = "fullname")
     private String fullname;
     @Basic(optional = false)
-    @Column(name = "address")
-    private String address;
+    @Column(name = "direccion")
+    private String direccion;
     @Basic(optional = false)
-    @Column(name = "phone")
-    private String phone;
+    @Column(name = "telefono")
+    private String telefono;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "employeeId")
     private Collection<Record> recordCollection;
     @JoinColumn(name = "type_id", referencedColumnName = "id")
@@ -60,11 +59,11 @@ public class Employee implements Serializable {
         this.document = document;
     }
 
-    public Employee(Long document, String fullname, String address, String phone) {
+    public Employee(Long document, String fullname, String direccion, String telefono) {
         this.document = document;
         this.fullname = fullname;
-        this.address = address;
-        this.phone = phone;
+        this.direccion = direccion;
+        this.telefono = telefono;
     }
 
     public Long getDocument() {
@@ -83,20 +82,20 @@ public class Employee implements Serializable {
         this.fullname = fullname;
     }
 
-    public String getAddress() {
-        return address;
+    public String getDireccion() {
+        return direccion;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getTelefono() {
+        return telefono;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
     public Collection<Record> getRecordCollection() {
@@ -137,7 +136,7 @@ public class Employee implements Serializable {
 
     @Override
     public String toString() {
-        return "com.mycompany.examplejpa.model.Employee[ document=" + document + " ]";
+        return "co.edu.sena.examplejpa.model.Employee[ document=" + document + " ]";
     }
     
 }
