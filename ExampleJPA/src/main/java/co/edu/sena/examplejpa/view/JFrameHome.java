@@ -39,7 +39,7 @@ public class JFrameHome extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menú principal");
 
-        jPanelHome.setBackground(new java.awt.Color(0, 153, 0));
+        jPanelHome.setBackground(new java.awt.Color(0, 102, 0));
 
         jButtonEmployeeType.setBackground(new java.awt.Color(0, 153, 51));
         jButtonEmployeeType.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N

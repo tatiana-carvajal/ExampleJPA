@@ -77,7 +77,7 @@ public class JFrameEmployeeType extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("EmployeeType");
 
-        jPanelEmployeeType.setBackground(new java.awt.Color(0, 102, 102));
+        jPanelEmployeeType.setBackground(new java.awt.Color(0, 102, 0));
 
         jLabelId.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabelId.setForeground(new java.awt.Color(255, 255, 255));

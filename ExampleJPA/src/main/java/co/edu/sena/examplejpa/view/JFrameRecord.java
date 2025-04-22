@@ -129,7 +129,7 @@ public class JFrameRecord extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Empleado");
 
-        jPanel3.setBackground(new java.awt.Color(102, 255, 102));
+        jPanel3.setBackground(new java.awt.Color(0, 102, 0));
 
         jLabelTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelTitle.setText("Registro");
@@ -154,7 +154,7 @@ public class JFrameRecord extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTableRecords);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/sena/examplejdbc/view/hogar.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/sena/examplejpa/view/hogar.png"))); // NOI18N
         jLabel1.setText("Menu");
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -384,8 +384,8 @@ public class JFrameRecord extends javax.swing.JFrame {
     private void jButtonInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInsertActionPerformed
         try {
             Record record = new Record();
-            record.setDateRecord(ConverUtils.localDateToDate( datePicker1.getDate().toString()));
-            record.setStartTime(ConverUtils.localTimeToDate(timePickerStart.getTime().toString()));
+            record.setDateRecord(ConverUtils.localDateToDate(datePicker1.getDate()));
+            record.setStartTime(ConverUtils.localTimeToDate(timePickerStart.getTime())); 
             /*record.setEndTime( timePickerEnd.getTime() != null ?   
                                     timePickerEnd.getTime().toString() : null );*/
             record.setEndTime(null);
@@ -432,10 +432,10 @@ public class JFrameRecord extends javax.swing.JFrame {
         try {
             Record record = new Record();
             record.setId(Integer.parseInt(jTextFieldId.getText()));
-            record.setDateRecord(ConverUtils.localDateToDate( datePicker1.getDate().toString()));
-            record.setStartTime(ConverUtils.localTimeToDate(timePickerStart.getTime().toString()));
+            record.setDateRecord(ConverUtils.localDateToDate(datePicker1.getDate()));
+            record.setStartTime(ConverUtils.localTimeToDate(timePickerStart.getTime())); 
             record.setEndTime( timePickerEnd.getTime() != null ?   
-                                    ConverUtils.localTimeToDate(timePickerEnd.getTime()).toString() : null );            
+                               ConverUtils.localTimeToDate(timePickerEnd.getTime()) : null );            
             //FK
             Employee employee = (Employee) jComboBoxEmployee.getSelectedItem();
             record.setEmployeeId(employee);
